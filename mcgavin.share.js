@@ -104,21 +104,6 @@ var jsonInit = function (whichPass){
 
 };
 
-casper.start().then(function() {
-
-    // todo: sdlmLogin()
-    if (sdlmURL.indexOf('/forest/')!==-1){
-        console.log('forest pharma in SDLM Url, logging in');
-        this.setHttpAuth('forestpharma', 'medscape11');
-    }
-
-    if (sdlmURL.indexOf('http://prepub.medscape.com/ws/sdlm/vascepa/')!==-1){
-        console.log('vascepa found, using: amr101/medscape2013');
-        this.setHttpAuth('amr101', 'medscape2013');
-    }
-
-});
-
 casper.then(function(){
     casper.echo('directory to save: '+dirSave + captureFileName);
     if (deskPass){
